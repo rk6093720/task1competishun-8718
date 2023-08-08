@@ -1,8 +1,12 @@
 import React from 'react'
+import Logout from './Logout'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className='home'>
+        <h1>Home</h1>
+        
+    </div>
   )
 }
 

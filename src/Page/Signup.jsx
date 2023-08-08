@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../FirebaseConfig';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 function Signup() {
+    const  navigate = useNavigate();
     const [name,setName]= useState("");
     const [email,setEmail]= useState("");
     const [pass,setPass]= useState("");
@@ -24,7 +25,7 @@ function Signup() {
         await updateProfile(user,{
             displayName:name
         })
-        Navigate("/")
+        navigate("/")
         // console.log(res,"data")
       })
       .catch((err)=>{
