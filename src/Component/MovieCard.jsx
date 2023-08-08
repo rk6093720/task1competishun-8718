@@ -43,13 +43,13 @@ return (
         <div className='images'>
             <img style={{ width:"100%", height:"50%"}} src={item.images} alt="" />
         </div>
-        <div className='names'>{item.names}</div>
+        <div className='names' style={{ fontSize:"24px", }}>{item.names}</div>
     
         <div className='generic card'> {item.genrecards}</div>
-        <button onClick={()=>handleBookmark(item)}><FaRegBookmark/></button>
-        <button onClick={()=> handleWatchlist(item)}><FaHeart/></button>
+        <button style={{ width:"100px",height:"50px",fontSize:"14px", backgroundColor:"red", color:"black",marginTop:"5px",marginLeft:"5px"}} onClick={()=>handleBookmark(item)}><FaRegBookmark/></button>
+        <button style={{ width:"100px",height:"50px",fontSize:"14px", backgroundColor:"blue", color:"white",marginTop:"5px",marginLeft:"5px"}} onClick={()=> handleWatchlist(item)}><FaHeart/></button>
         <Link to={`/movie/${item.id}`}>
-        <button>MovieDetails</button>
+        <button style={{ width:"100px",height:"50px",fontSize:"14px", backgroundColor:"red", color:"black",marginTop:"5px"}}>MovieDetails</button>
         </Link>
     </div>
   )

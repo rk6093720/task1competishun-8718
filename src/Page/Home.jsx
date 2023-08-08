@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MovieCard from '../Component/MovieCard';
 import Search from '../Component/Search';
-
-
 const Home = () => {
        const [moviedata,setMovieData]= useState([]);
       const getData= async()=>{
@@ -23,17 +21,14 @@ const Home = () => {
     <div className='home' style={{width:"1200px", height:"100%",margin:"auto"}}>
         <h1> Movies</h1>
         <Search moviedata={moviedata} setMovieData={setMovieData} getData={getData}/>
-        <div className='gridCard' style={{width:"100%", height:"100%", display:"grid", gridTemplateColumns:"repeat(3, 300px)", gridGap:"20px",marginLeft:"55px"}}>
+        <div className='gridCard' style={{width:"100%", height:"100%", display:"grid", gridTemplateColumns:"repeat(3, 300px)", gridGap:"20px",marginLeft:"97px"}}>
         {
             moviedata.map((item , index)=>{
                 return <MovieCard item={item} index={index+1} key={item.id} />
             })
-
         }
-        </div>
-          
+        </div>     
     </div>
   )
 }
-
 export default Home

@@ -29,29 +29,30 @@ const Login = () => {
       })
     }
   return (
-    <div className='login' >
-        <h1>Login App</h1>
+    <div className='login' style={{border:"1px solid black", width:"30%", height:"400px",margin:"auto",marginTop:"5px",backgroundImage:"URL(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_enQvl_kc45QJUn312vIROsSXVUkShBp0mA&usqp=CAU)",backgroundSize:"cover",backgroundRepeat: 'no-repeat',backgroundPosition:"center"}} >
+        <h1 style={{width:"100%", color:"white"}}>Login App</h1>
         <form onSubmit={handleLogin}>
-            <input type="email"
+            <input style={{width:"98%", height:"50px",fontSize:"24px",marginTop:"5px"}} type="email"
             placeholder='enter your email'
             value={email} 
             onChange={(e)=> setEmail(e.target.value)}/>
             <br />
             <input type="password"
+            style={{width:"98%", height:"50px",fontSize:"24px",marginTop:"5px"}}
             placeholder='enter your password' 
             value={pass}
             onChange={(e)=> setPass(e.target.value)} />
 
             <div className='inputSubmitlogin'>
                 <b>{error}</b>
-                <input type="submit" value="Submit"  disabled={flag} />
+                <input style={{width:"100%", height:"50px",fontSize:"24px",marginTop:"5px",backgroundColor:"red", color:"black"}} type="submit" value="Submit"  disabled={flag} />
             </div>
         </form>
         <div className='notAccountgotosignup' >
-        <p>
+        <p style={{ fontSize:"24px", color:"white"}}>
             Already have an account?{" "}
             <span>
-              <Link to="/signup">Sign up</Link>
+              <Link style={{textDecoration:"none",color:"white"}} to="/signup">Sign up</Link>
             </span>
           </p>
         </div>

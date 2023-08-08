@@ -21,12 +21,12 @@ const Search = ({moviedata,setMovieData,getData}) => {
   
   return (
     <div className='search'>
-         <input type="text"
+         <input style={{width:"800px", height:"50px",fontSize:"24px",marginTop:"3px"}} type="text"
          value={searchvalue}
          onChange={(e)=> setSearchValue(e.target.value)}
          placeholder='enter the search by the movie name' />
-         <button onClick={handleSearch}>Search</button>
-         <button onClick={()=>handleRest()}>Reset</button>
+         <button style={{ width:"100px", height:"60px",backgroundColor:"red", color:"black"}} onClick={handleSearch}>Search</button>
+         <button style={{ width:"100px", height:"60px",backgroundColor:"blue", color:"white",marginLeft:"5px"}} onClick={()=>handleRest()}>Reset</button>
     </div>
   )
 }
