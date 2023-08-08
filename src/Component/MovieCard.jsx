@@ -1,0 +1,43 @@
+import React, {useState } from 'react'
+import { FaRegBookmark,FaHeart} from "react-icons/fa"
+const MovieCard = ({item}) => {
+    //  const favourite = useState(JSON.parse(localStorage.getItem('bookmarked')) || []);
+   const handleBookmark=(item)=>{
+    const favourite = JSON.parse(localStorage.getItem('bookmarked')) || [];
+    // favorites.push(item);
+    // localStorage.setItem('favorites', JSON.stringify(favorites));
+    // console.log(item.id)
+    let id = item.id;
+    let temp = favourite.find(items=> items.id === id)
+    console.log(temp)
+    if(temp){
+        alert("moviedata is already saved in the bookmarked")
+    }else{
+    let a=item;
+    a.quantity=1;
+    favourite.push(a);
+    localStorage.setItem("bookmarked",JSON.stringify(favourite));
+    alert("movie data is bookmarked")
+
+    } 
+
+  }
+  const handleWatchlist=(item)=>{
+    
+  }
+//   console.log(favourite)
+return (
+    <div className='moviecard' key={item.id} style={{ width:"100%",height:"100%",border:"1px solid black", marginTop:'2px'}}>
+        <div className='images'>
+            <img style={{ width:"100%", height:"50%"}} src={item.images} alt="" />
+        </div>
+        <div className='names'>{item.names}</div>
+    
+        <div className='generic card'> {item.genrecards}</div>
+        <button onClick={()=>handleBookmark(item)}><FaRegBookmark/></button>
+        <button onClick={()=> handleWatchlist(item)}><FaHeart/></button>
+    </div>
+  )
+}
+
+export default MovieCard

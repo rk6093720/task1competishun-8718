@@ -5,6 +5,8 @@ import Signup from './Signup'
 import Home from './Home'
 import { auth } from '../FirebaseConfig'
 import Logout from './Logout'
+import FavouriteMovie from '../Component/FavouriteMovie'
+import WatchList from '../Component/WatchList'
 const MainRoutes = () => {
     const [userName,setUserName]= useState("");
     useEffect(()=>{
@@ -23,6 +25,8 @@ const MainRoutes = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path='/logout' element={<Logout/>}/>
         <Route path="/" element={<Home name={userName} />} />
+        <Route path='/favouriteMovie' element={<FavouriteMovie/>}/>
+        <Route path='/watchlist' element={<WatchList/>}/>
       </Routes>
    
   </div>
