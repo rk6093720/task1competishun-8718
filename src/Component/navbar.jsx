@@ -28,6 +28,12 @@ const navbar = () => {
                 favouriteMovie
                 </Link>
                 </div>
+                <div className='favouritemovie' style={{ textDecoration:"none"}}>
+                <Link style={{textDecoration:"none",color:"white"}} to="/watchlist">
+                watchlist
+                </Link>
+                </div>
+                
                 <div className='linklogin' style={{ textDecoration:"none" , fontSize:"24px"}}>
                   <Logout style={{ textDecoration:"none" , fontSize:"24px"}}/>
                 </div>

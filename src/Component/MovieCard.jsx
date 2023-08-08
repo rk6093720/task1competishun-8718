@@ -1,6 +1,8 @@
-import React, {useState } from 'react'
+import React from 'react'
 import { FaRegBookmark,FaHeart} from "react-icons/fa"
+import { Link } from 'react-router-dom';
 const MovieCard = ({item}) => {
+    // const [watchlist,setWatchList]= useState([]);
     //  const favourite = useState(JSON.parse(localStorage.getItem('bookmarked')) || []);
    const handleBookmark=(item)=>{
     const favourite = JSON.parse(localStorage.getItem('bookmarked')) || [];
@@ -18,12 +20,22 @@ const MovieCard = ({item}) => {
     favourite.push(a);
     localStorage.setItem("bookmarked",JSON.stringify(favourite));
     alert("movie data is bookmarked")
-
     } 
-
   }
   const handleWatchlist=(item)=>{
-    
+    const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    let id = item.id;
+    let temp = watchlist.find(items=> items.id === id)
+    console.log(temp)
+    if(temp){
+        alert("moviedata is already saved in the watchlist")
+    }else{
+    let a=item;
+    a.quantity=1;
+    watchlist.push(a);
+    localStorage.setItem("watchlist",JSON.stringify(watchlist));
+    alert("movie data is watchlist")
+    } 
   }
 //   console.log(favourite)
 return (
@@ -36,6 +48,9 @@ return (
         <div className='generic card'> {item.genrecards}</div>
         <button onClick={()=>handleBookmark(item)}><FaRegBookmark/></button>
         <button onClick={()=> handleWatchlist(item)}><FaHeart/></button>
+        <Link to={`/movie/${item.id}`}>
+        <button>MovieDetails</button>
+        </Link>
     </div>
   )
 }
