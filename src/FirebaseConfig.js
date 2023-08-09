@@ -2,15 +2,14 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth"
 // https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDMg3WGN2v8HEjM4cUPX8K3Q2rxb27qYZc",
-  authDomain: "emailandpassword-4ab61.firebaseapp.com",
-  projectId: "emailandpassword-4ab61",
-  storageBucket: "emailandpassword-4ab61.appspot.com",
-  messagingSenderId: "763406599884",
-  appId: "1:763406599884:web:35f7800a3bf2823a45e469"
+  apiKey: "AIzaSyC8zYGDzReLtiSGSjd7O6-9MUh92yqKbhk",
+  authDomain: "emailandpassword-41d67.firebaseapp.com",
+  projectId: "emailandpassword-41d67",
+  storageBucket: "emailandpassword-41d67.appspot.com",
+  messagingSenderId: "32939019133",
+  appId: "1:32939019133:web:b264b06aafa356a3279a14"
 };
 
 // Initialize Firebase
