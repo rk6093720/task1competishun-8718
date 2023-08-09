@@ -8,6 +8,7 @@ import Logout from './Logout'
 import FavouriteMovie from '../Component/FavouriteMovie'
 import WatchList from '../Component/WatchList'
 import SingleMovie from './SingleMovie'
+import ReqAuth from '../Component/ReqAuth'
 
 const MainRoutes = () => {
     const [userName,setUserName]= useState("");
@@ -27,9 +28,21 @@ const MainRoutes = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path='/logout' element={<Logout/>}/>
         <Route path="/" element={<Home name={userName} />} />
-        <Route path='/favouriteMovie' element={<FavouriteMovie/>}/>
-        <Route path='/watchlist' element={<WatchList/>}/>
-        <Route path='/movie/:id' element={<SingleMovie/>}/>
+        <Route path='/favouriteMovie' element={
+          <ReqAuth>
+        <FavouriteMovie/>
+        </ReqAuth>
+        }/>
+        <Route path='/watchlist' element={
+          <ReqAuth>
+        <WatchList/>
+        </ReqAuth>
+        }/>
+        <Route path='/movie/:id' element={
+          <ReqAuth>
+        <SingleMovie/>
+        </ReqAuth>
+        }/>
       </Routes>
    
   </div>
